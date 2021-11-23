@@ -1,5 +1,6 @@
-package com.cchyphon.cavebrightnessmod.util;
+package com.cchyphon.cavebrightnessmod.client;
 
+import com.cchyphon.cavebrightnessmod.util.ToggleEvent;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
