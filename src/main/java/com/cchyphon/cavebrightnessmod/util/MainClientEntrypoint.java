@@ -13,22 +13,22 @@ import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
 public class MainClientEntrypoint  implements ClientModInitializer {
-    // private static KeyBinding fullbrightKeybind;
+    private static KeyBinding fullbrightKeybind;
     @Override
     public void onInitializeClient() {
-       /* fullbrightKeybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+       fullbrightKeybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.cbclient.fullbright", // The translation key of the keybinding's name
                 InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
                 GLFW.GLFW_KEY_G, // The keycode of the key
                 "keybind.category.cbclient.client_modifications" // The translation key of the keybinding's category.
         ));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (fullbrightKeybind.wasPressed()) {
-                    MinecraftClient.getInstance().options.gamma = 32767.0F;
-                    MinecraftClient.getInstance().options.write();
+            while (fullbrightKeybind.isPressed()) {
+                    ToggleEvent.onHotkeyPress();
+                    fullbrightKeybind.setPressed(false);
 
             }
-        }); */
+        });
 
 
     }

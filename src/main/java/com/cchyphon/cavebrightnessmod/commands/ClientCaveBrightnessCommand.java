@@ -1,5 +1,6 @@
 package com.cchyphon.cavebrightnessmod.commands;
 
+import com.cchyphon.cavebrightnessmod.commands.values.BrightnessValues;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.client.MinecraftClient;
@@ -17,24 +18,24 @@ public class ClientCaveBrightnessCommand {
         dispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) CommandManager.literal("cavebrightness").requires((serverCommandSource) -> {
             return serverCommandSource.hasPermissionLevel(0);
         })).then(CommandManager.literal("low").executes((commandContext) -> {
-            return low((ServerCommandSource)commandContext.getSource(), 1.5F);
+            return low((ServerCommandSource)commandContext.getSource(), BrightnessValues.LOW);
         }))).then(CommandManager.literal("medium").executes((commandContext) -> {
-            return medium((ServerCommandSource)commandContext.getSource(), 3.0F);
+            return medium((ServerCommandSource)commandContext.getSource(), BrightnessValues.MEDIUM);
         })).then(CommandManager.literal("high").executes((commandContext) -> {
-            return high((ServerCommandSource)commandContext.getSource(), 4.5F);
+            return high((ServerCommandSource)commandContext.getSource(), BrightnessValues.HIGH);
         })).then(CommandManager.literal("max").executes((commandContext) -> {
-            return max((ServerCommandSource)commandContext.getSource(), 6.0F);
+            return max((ServerCommandSource)commandContext.getSource(), BrightnessValues.MAX);
         })));
         dispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) CommandManager.literal("cb").requires((serverCommandSource) -> {
             return serverCommandSource.hasPermissionLevel(0);
         })).then(CommandManager.literal("low").executes((commandContext) -> {
-            return low((ServerCommandSource)commandContext.getSource(), 1.5F);
+            return low((ServerCommandSource)commandContext.getSource(), BrightnessValues.LOW);
         }))).then(CommandManager.literal("medium").executes((commandContext) -> {
-            return medium((ServerCommandSource)commandContext.getSource(), 3.0F);
+            return medium((ServerCommandSource)commandContext.getSource(), BrightnessValues.MEDIUM);
         })).then(CommandManager.literal("high").executes((commandContext) -> {
-            return high((ServerCommandSource)commandContext.getSource(), 4.5F);
+            return high((ServerCommandSource)commandContext.getSource(), BrightnessValues.HIGH);
         })).then(CommandManager.literal("max").executes((commandContext) -> {
-            return max((ServerCommandSource)commandContext.getSource(), 6.0F);
+            return max((ServerCommandSource)commandContext.getSource(), BrightnessValues.MAX);
         })));
     }
 
@@ -42,27 +43,27 @@ public class ClientCaveBrightnessCommand {
     public static int low(ServerCommandSource source, float strength) {
         MinecraftClient.getInstance().options.gamma = (double)strength;
         MinecraftClient.getInstance().options.write();
-        source.sendFeedback(new LiteralText("§9§l[CB CLIENT]§r Brightness set to 150%"), false);
+        source.sendFeedback(new LiteralText("§4§l[CB CLIENT]§r Brightness set to 150%"), false);
         return 1;
     }
 
     public static int medium(ServerCommandSource source, float strength) {
         MinecraftClient.getInstance().options.gamma = (double)strength;
         MinecraftClient.getInstance().options.write();
-        source.sendFeedback(new LiteralText("§9§l[CB CLIENT]§r Brightness set to 300%"), false);
+        source.sendFeedback(new LiteralText("§4§l[CB CLIENT]§r Brightness set to 300%"), false);
         return 1;
     }
 
     public static int high(ServerCommandSource source, float strength) {
         MinecraftClient.getInstance().options.gamma = (double)strength;
         MinecraftClient.getInstance().options.write();
-        source.sendFeedback(new LiteralText("§9§l[CB CLIENT]§r Brightness set to 450%"), false);
+        source.sendFeedback(new LiteralText("§4§l[CB CLIENT]§r Brightness set to 450%"), false);
         return 1;
     }
     public static int max(ServerCommandSource source, float strength) {
         MinecraftClient.getInstance().options.gamma = (double)strength;
         MinecraftClient.getInstance().options.write();
-        source.sendFeedback(new LiteralText("§9§l[CB CLIENT]§r Brightness set to 600%"), false);
+        source.sendFeedback(new LiteralText("§4§l[CB CLIENT]§r Brightness set to 600%"), false);
         return 1;
     }
 }
