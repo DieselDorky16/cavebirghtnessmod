@@ -25,7 +25,19 @@ public class ClientCaveBrightnessCommand {
         })).then(CommandManager.literal("max").executes((commandContext) -> {
             return max((ServerCommandSource)commandContext.getSource(), 6.0F);
         })));
+        dispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) CommandManager.literal("cb").requires((serverCommandSource) -> {
+            return serverCommandSource.hasPermissionLevel(0);
+        })).then(CommandManager.literal("low").executes((commandContext) -> {
+            return low((ServerCommandSource)commandContext.getSource(), 1.5F);
+        }))).then(CommandManager.literal("medium").executes((commandContext) -> {
+            return medium((ServerCommandSource)commandContext.getSource(), 3.0F);
+        })).then(CommandManager.literal("high").executes((commandContext) -> {
+            return high((ServerCommandSource)commandContext.getSource(), 4.5F);
+        })).then(CommandManager.literal("max").executes((commandContext) -> {
+            return max((ServerCommandSource)commandContext.getSource(), 6.0F);
+        })));
     }
+
 
     public static int low(ServerCommandSource source, float strength) {
         MinecraftClient.getInstance().options.gamma = (double)strength;

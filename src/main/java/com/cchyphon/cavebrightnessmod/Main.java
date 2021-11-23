@@ -6,7 +6,6 @@ public class Main implements ModInitializer {
     @Override
     public void onInitialize() {
         ClientCommandRegister.clientRegisterCommands();
-        ClientCommandAlias.clientRegisterAlias();
 
     }
 }

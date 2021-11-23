@@ -23,6 +23,15 @@ public class ClientDefaultBrightnessCommand {
         })).then(CommandManager.literal("bright").executes((commandContext) -> {
             return bright((ServerCommandSource)commandContext.getSource(), 1.0F);
         })));
+        dispatcher.register((LiteralArgumentBuilder)((LiteralArgumentBuilder)((LiteralArgumentBuilder) CommandManager.literal("db").requires((serverCommandSource) -> {
+            return serverCommandSource.hasPermissionLevel(0);
+        })).then(CommandManager.literal("moody").executes((commandContext) -> {
+            return moody((ServerCommandSource)commandContext.getSource(), 0.0F);
+        }))).then(CommandManager.literal("default").executes((commandContext) -> {
+            return _default((ServerCommandSource)commandContext.getSource(), 0.5F);
+        })).then(CommandManager.literal("bright").executes((commandContext) -> {
+            return bright((ServerCommandSource)commandContext.getSource(), 1.0F);
+        })));
     }
 
     public static int moody(ServerCommandSource source, float strength) {
