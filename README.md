@@ -1,10 +1,10 @@
 # CB Client
 Thank you for choosing **CB Client**. A client-side mod that will make the caving experience easier ahead of Minecraft 1.18. Unlike third-party pvp clients, they can be installed directly into your mods folder.
 
->##Installation
+><h3>Installation</h3>
 >Install the mod in your mods folder. Requires Fabric 1.18-pre6 or later and Java 17. Requires Fabric API.
 
-##Features
+<h3>Features</h3>
 * <code>/defaultbrightness (moody|default|bright)</code> - Switches between the options within the brightness slider
 * <code>/cavebrightness (low|medium|high|max)</code> - Switches between higher brightness values.
 * Toggleable Fullbright Keybind (Defaults to G)
