@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "cbclient",
+  "version": "${version}",
+
+  "name": "CB Client (Cave Brightness Mod)",
+  "description": "A client mod that can be installed to Fabric that allows you to further modify your experience.",
+  "authors": [
+    "cchyphon"
+  ],
+  "contact": {
+    "homepage": " ",
+    "sources": " "
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/cbclient/icon.png",
+
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "com.cchyphon.cavebrightnessmod.Main"
+    ],
+    "client": [
+      "com.cchyphon.cavebrightnessmod.util.MainClientEntrypoint"
+    ]
+  },
+  "mixins": [
+
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
