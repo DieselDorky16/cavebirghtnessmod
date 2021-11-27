@@ -9,8 +9,9 @@
     "cchyphon"
   ],
   "contact": {
-    "homepage": " ",
-    "sources": "https://github.com/DieselDorky16/cavebirghtnessmod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/cb-client/",
+    "sources": "https://github.com/DieselDorky16/cavebirghtnessmod",
+    "issues": "https://github.com/DieselDorky16/cavebirghtnessmod/issues"
   },
 
   "license": "CC0-1.0",
